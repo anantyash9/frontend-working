@@ -1,0 +1,52 @@
+<div (click)="router.navigate(['/capture'])"  class="solution" fxLayout="row" fxLayoutAlign="center center" *ngIf="!isRegistered">
+
+    <div class='sub-solution' fxLayout="column" fxLayoutAlign="center center">
+        <img src="assets/icons/contactless.png" class="icons">
+        Contactless
+    </div>
+
+        <div class="mat-display-3 even-large-text" fxLayout="column" fxLayoutAlign="center center">
+             
+        </div>
+
+    <div fxLayout="column" fxLayoutAlign="center center">
+        <img src="assets/icons/fast.png" class="icons">
+        Fast
+    </div>
+
+        <div class="mat-display-3 even-large-text" fxLayout="column" fxLayoutAlign="center center">
+            
+        </div>
+
+    <div fxLayout="column" fxLayoutAlign="center center">
+        <img src="assets/icons/secure.png" class="icons">
+        Secure
+    </div>
+
+        <div class="mat-display-3 even-large-text" fxLayout="column" fxLayoutAlign="center center">
+            
+        </div>
+    <div fxLayout="column" fxLayoutAlign="center center">
+        <img src="assets/icons/easy.png" class="icons">
+        Easy
+    </div>
+    <div class="mat-display-3 even-large-text" fxLayout="column" fxLayoutAlign="center center">
+         
+    </div>
+    <div class="mat-display-2 typearea" style="text-align: end;">
+        <b>Register Now<br> &nbsp;
+            <span style="color:#0076d6;"
+               class="txtrotate"
+               id="textrotate1"
+               data-period="2000"
+               data-rotate='[ "Fast","Simple", "Secure", "Easy"]'></span></b>
+          
+    </div>
+</div>
+<div class="reg-container" fxLayout="row" fxLayoutAlign="center center" *ngIf="isRegistered" >
+
+    <div class='registered' fxLayout="column" fxLayoutAlign="center center" >
+        <img src="assets/icons/contactless.png" class="icons">
+       <b>You are already registered</b> 
+    </div>
+</div>

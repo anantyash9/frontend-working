@@ -1,0 +1,74 @@
+
+    <h2 mat-dialog-title>{{result.interviewee.candidateId |titlecase}}</h2>
+    <h3 mat-dialog-subtitle>{{result.questionset.name |titlecase}}</h3>
+    <mat-dialog-content class="mat-typography">
+      <h3>Average Score {{avgScore}}/10</h3>
+      <mat-progress-bar
+      class="example-margin"
+      mode='determinate'
+      [value]="avgScore*10">
+  </mat-progress-bar>
+  <br>
+  <div class='stats' fxLayoutAlign="space-between">
+  <h3>Average Difficulty {{avgDifficulty}}</h3>
+  <h3>Total score {{result.netScore.toFixed(1)}}/{{result.netWeight*10}}</h3>
+  <h3>Interview Status : {{status}}</h3>
+</div>
+  <div class='chiplist'>
+    <div *ngFor="let tag of tagcard">
+      <mat-card class="answer-blocks mat-elevation-z0">
+        <mat-card-header>
+  
+          <mat-card-title>{{ tag.tag | titlecase}}</mat-card-title>
+          <mat-card-subtitle>Number of questions answered {{tag.count}}</mat-card-subtitle>
+        </mat-card-header>
+        <mat-card-content>
+          <p>Average Score {{(tag.score/tag.count).toFixed(1)}}/10</p>
+          <mat-progress-bar
+          class="example-margin"
+          color='warn'
+          mode='determinate'
+          [value]="(tag.score/tag.count)*10">
+      </mat-progress-bar>
+      <br>
+  </mat-card-content>
+  
+  </mat-card>
+  </div>
+    </div>
+<h2>Answers</h2>
+<div class="answer-area">  
+  <div *ngFor="let answer of details" class='answers'>
+    <mat-card class="answer-blocks mat-elevation-z0">
+      <mat-card-header>
+
+        <mat-card-title>{{ answer.interviewQuestion.question.question}}</mat-card-title>
+        <mat-card-subtitle>{{answer.interviewQuestion.respone}}</mat-card-subtitle>
+      </mat-card-header>
+      <mat-card-content>
+        <p>Score {{answer.interviewQuestion.score.toFixed(1)}}/10</p>
+        <mat-progress-bar
+        class="example-margin"
+        color='warn'
+        mode='determinate'
+        [value]="answer.interviewQuestion.score*10">
+    </mat-progress-bar>
+    <br>
+    <div class='chiplist'>
+      <h4>Tags</h4>
+    <mat-chip-list *ngFor="let topic of answer.questionTags">
+        <mat-chip >{{topic.qtag.name}}</mat-chip>
+        </mat-chip-list>
+      </div>
+<h4>Difficulty Level : {{answer.interviewQuestion.question.weight}}</h4>
+</mat-card-content>
+
+</mat-card>
+</div>
+</div>
+
+        
+    </mat-dialog-content>
+    <mat-dialog-actions align="end">
+      <button mat-button mat-dialog-close>Close</button>
+    </mat-dialog-actions>

@@ -1,0 +1,26 @@
+.card-deck-container {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    border-radius: 2px;
+    padding: 10px 10px 10px;
+    margin: 100px 10px 10px 10px;
+    align-content: flex-start;
+  }
+  .card-item {
+    padding: 3px 3px 3px 3px;
+    max-width: 20%;
+    min-width: 200px;
+    height:fit-content; 
+  }
+  .mr-10 {
+    margin-right: 10px;
+  }
+  
+  .ml-10 {
+    margin-left: 10px;
+  }
+  .app-interviewcard{
+     max-width: 20%;
+     min-width: 200px; 
+  }

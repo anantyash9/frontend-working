@@ -1,0 +1,33 @@
+<mat-grid-list cols="1" rows="4" rowHeight="23vh">
+    <mat-grid-tile
+    [colspan]=1
+    [rowspan]=1>
+  <!-- add a mat card with mat table inside -->
+    <mat-card class="summary-box">
+        <mat-card-header>
+        <mat-card-title>Summary</mat-card-title>
+        <mat-card-subtitle>Summary of Registered Users</mat-card-subtitle>
+        </mat-card-header>
+        <mat-card-content>
+        <app-hr-summary></app-hr-summary>
+        </mat-card-content>
+    </mat-card>
+
+</mat-grid-tile>
+    <mat-grid-tile
+        [colspan]=1
+        [rowspan]=3>
+      <!-- add a mat card with mat table inside -->
+        <mat-card class="big-box">
+            <mat-card-header>
+            <mat-card-title>Registered Users</mat-card-title>
+            </mat-card-header>
+            <mat-card-content>
+            <!-- add a sample mat table -->
+            <app-registered-users-view></app-registered-users-view>
+                    </mat-card-content>
+        </mat-card>
+
+    </mat-grid-tile>
+
+  </mat-grid-list>

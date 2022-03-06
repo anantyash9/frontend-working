@@ -1,0 +1,61 @@
+<mat-card class="summary-box">
+    <mat-card-header>
+    <mat-card-title>{{rowImport.name}}</mat-card-title>
+    <mat-card-subtitle>Auth records for employee with ID {{rowImport.id}}</mat-card-subtitle>
+    </mat-card-header>
+    <mat-card-content>
+
+<div class="example-header">
+    <mat-form-field >
+      <input matInput (keyup)="applyFilter($event.target.value)" placeholder="Filter" >
+    </mat-form-field>
+  </div>
+  
+  <div class="example-container mat-elevation-z8">
+  
+    <mat-table [dataSource]="dataSource" matSort>
+  
+      <!-- ID Column -->
+      <ng-container matColumnDef="Date">
+        <mat-header-cell *matHeaderCellDef mat-sort-header> Date </mat-header-cell>
+        <mat-cell *matCellDef="let row"> {{row.date}} </mat-cell>
+      </ng-container>
+        <!-- ID Column -->
+        <ng-container matColumnDef="Time">
+          <mat-header-cell *matHeaderCellDef mat-sort-header> Date </mat-header-cell>
+          <mat-cell *matCellDef="let row"> {{row.time}} </mat-cell>
+        </ng-container>
+      <!-- Progress Column -->
+      <ng-container matColumnDef="Location">
+        <mat-header-cell *matHeaderCellDef mat-sort-header> Location </mat-header-cell>
+        <mat-cell *matCellDef="let row"> {{row.macAddress}} </mat-cell>
+      </ng-container>
+  
+      <!-- Name Column -->
+      <ng-container matColumnDef="Score">
+        <mat-header-cell *matHeaderCellDef mat-sort-header> Auth Score </mat-header-cell>
+        <mat-cell *matCellDef="let row"> {{row.score-1}} </mat-cell>
+      </ng-container>
+  
+      <!-- Color Column -->
+      <ng-container matColumnDef="Authenticated">
+        <mat-header-cell *matHeaderCellDef mat-sort-header> Auth </mat-header-cell>
+        <mat-cell *matCellDef="let row" [ngClass]="{
+          'positive' : row.authenticated,
+          'negative' : !row.authenticated
+       }"> {{row.authenticated}} </mat-cell>
+      </ng-container>
+  
+      <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+      <mat-row *matRowDef="let row; columns: displayedColumns;">
+      </mat-row>
+    </mat-table>
+  
+    <mat-paginator [pageSizeOptions]="[5, 10, 25, 100]"></mat-paginator>
+  </div>
+  
+</mat-card-content>
+</mat-card> 
+  <!-- Copyright 2018 Google Inc. All Rights Reserved.
+      Use of this source code is governed by an MIT-style license that
+      can be found in the LICENSE file at http://angular.io/license -->

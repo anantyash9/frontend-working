@@ -1,0 +1,31 @@
+<mat-toolbar color="primary">
+    <a mat-button class="companyName" routerLink="">
+      <span>Contactless Auth</span>
+    </a>
+    <span class="fill-remaining-space"></span>
+    <app-menu 
+      [options]="options$ | async"
+      (themeChange)="themeChangeHandler($event)">
+    </app-menu>
+<button mat-icon-button class="icon" [matMenuTriggerFor]="menu">
+<mat-icon>menu</mat-icon>
+</button>
+<mat-menu #menu="matMenu" [overlapTrigger]="false">
+<button mat-menu-item [routerLink]="['']">
+<mat-icon>home</mat-icon>
+<span>Home</span>
+</button>
+<button mat-menu-item [routerLink]="['attendence']">
+    <mat-icon>videocam</mat-icon>
+    <span>Attandance</span>
+</button>
+<button mat-menu-item [routerLink]="['interviewresults']" *ngIf="Admin">
+  <mat-icon>fact_check</mat-icon>
+  <span>Review Interviews</span>
+</button>
+<button mat-menu-item (click)="logout();">
+<mat-icon>people_outline</mat-icon>
+<span>Sign out</span>
+</button>
+</mat-menu>
+</mat-toolbar>

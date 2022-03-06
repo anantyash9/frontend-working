@@ -1,0 +1,28 @@
+/* .card-deck-container {
+    width: 100%;
+    position: fixed;
+    border-radius: 2px;
+    padding: 10px 10px 10px;
+    margin: 100px 10px 10px 10px;
+    align-items: center;
+    justify-content: center;
+  } */
+.answer-blocks {
+    padding: 10px 10px 10px;
+    margin: 10px 10px 10px 10px;
+    border: 2px solid rgb(80, 80, 80)
+  }
+
+  .answer-area {
+    max-height: 200px;
+    overflow-y: auto;
+  }
+  .chiplist {
+    display: flex;
+    flex-flow: row;
+    flex-wrap: wrap;}
+  .stats {
+    display: flex;
+    flex-flow: row;
+    flex-wrap: wrap;
+    }

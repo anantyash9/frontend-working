@@ -1,0 +1,37 @@
+<mat-card class="info-cards" >
+    <mat-card-header>
+        <mat-card-title>Total Devices Registered: {{data.totalDevices}}</mat-card-title>
+    </mat-card-header>
+</mat-card>
+
+<mat-card class="info-cards"  >
+    <mat-card-header>
+        <mat-card-title>Total Disabled Devices: {{data.disabledDevices}}</mat-card-title>
+    </mat-card-header>
+</mat-card>
+
+<mat-card  class="info-cards" >
+    <mat-card-header>
+        <mat-card-title>Total Active Devices: {{data.activeDevices}}</mat-card-title>
+    </mat-card-header>
+</mat-card>
+<mat-card  class="info-cards" >
+    <mat-card-header>
+        <mat-card-title>Total Inactive Devices: {{data.inactiveDevices}}</mat-card-title>
+    </mat-card-header>
+</mat-card>
+<mat-card  class="info-cards" >
+    <mat-card-header>
+        <mat-card-title>Total Auth Attempts in 24 hours: {{data.totalAuthInDay}}</mat-card-title>
+    </mat-card-header>
+</mat-card>
+<mat-card  class="info-cards" >
+    <mat-card-header>
+        <mat-card-title>Negative vs Positive Auth Rates</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+        <br>
+        <app-pie-chart></app-pie-chart>
+    </mat-card-content>
+</mat-card>
+

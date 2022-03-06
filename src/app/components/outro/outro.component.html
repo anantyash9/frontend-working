@@ -1,0 +1,21 @@
+<div class="info-container">
+    <mat-spinner *ngIf="!loaded"></mat-spinner>
+    <mat-card id="info-card" class="info-card"  *ngIf="loaded">
+        <div >
+        <mat-card-title>
+            {{heading | titlecase}}
+        </mat-card-title>
+        <br>
+        <mat-card-subtitle>
+            {{subheading}}
+        </mat-card-subtitle>
+        <br>
+        <app-wave [hight]="innerHeight*0.20" [width]="innerWidth*0.55" [lineWidth]="3" [color]="color"></app-wave>
+        
+        <mat-card-actions>
+            <button class='button' mat-raised-button color="accent" type="start" (click)="start();">Finish</button>
+        </mat-card-actions>
+    </div>
+    </mat-card>
+    
+</div>

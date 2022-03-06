@@ -1,0 +1,46 @@
+<!-- 
+<mat-card  >
+    <mat-card-header>
+        <mat-card-title>Total Auth Attempts in 24 hours: {{number*100}}</mat-card-title>
+    </mat-card-header>
+</mat-card>
+<mat-card >
+    <mat-card-header>
+        <mat-card-title>Negative vs Positive Auth Rates</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+        <br>
+        <app-pie-chart></app-pie-chart>
+    </mat-card-content>
+</mat-card> -->
+
+<mat-grid-list cols="4" rowHeight="10vh">
+    <mat-grid-tile>
+        <mat-card class="mat-elevation-z2" >
+            <mat-card-header>
+                <mat-card-title>Active users: {{data.activeUsers}}</mat-card-title>
+            </mat-card-header>
+        </mat-card>
+    </mat-grid-tile>
+    <mat-grid-tile>
+        <mat-card >
+            <mat-card-header>
+                <mat-card-title>Unique users in 24 hours: {{data.uniqueAuthInDay}}</mat-card-title>
+            </mat-card-header>
+        </mat-card>
+    </mat-grid-tile>
+    <mat-grid-tile>
+    <mat-card  >
+        <mat-card-header>
+            <mat-card-title>Total High Temperature Alerts: {{data.highTemperatureAlerts}}</mat-card-title>
+        </mat-card-header>
+    </mat-card>
+</mat-grid-tile>
+<mat-grid-tile>
+    <mat-card >
+        <mat-card-header>
+            <mat-card-title>Total Suspended Users: {{data.disabledUsers}}</mat-card-title>
+        </mat-card-header>
+    </mat-card>
+</mat-grid-tile>
+  </mat-grid-list>

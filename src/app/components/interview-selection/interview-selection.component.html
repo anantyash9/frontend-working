@@ -1,0 +1,28 @@
+<div class="intro-container">
+    <mat-spinner *ngIf="!loaded"></mat-spinner>
+    <mat-card id="intro-card" class="intro-card" *ngIf="loaded" >
+<div >
+        <mat-card-title>
+           Hi {{name | titlecase}} ! <br><br> Welcome to InterVU
+        </mat-card-title>
+        <br>
+        <mat-card-subtitle>
+            Select an interview to get started
+        </mat-card-subtitle>
+        <mat-card-content>
+        <form [formGroup]="interviewform" (ngSubmit)="onStart(interviewform.value)" appearance="fill"> 
+
+    <mat-form-field>
+        <mat-label>Interview</mat-label>
+        <mat-select formControlName="interview">
+            <mat-option *ngFor="let interview of questionsets" [value]="interview.name">
+              {{interview.name | titlecase}}
+            </mat-option>
+          </mat-select>
+        </mat-form-field><br><br>
+        <button mat-raised-button color="primary" type="submit">Start</button>
+    </form>
+    </mat-card-content>
+</div>
+</mat-card>
+</div>

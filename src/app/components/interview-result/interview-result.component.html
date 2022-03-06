@@ -1,0 +1,20 @@
+<mat-spinner *ngIf="!loaded"></mat-spinner>
+    <mat-card class="intro-card" *ngIf="loaded" >
+<form [formGroup]="interviewform" (ngSubmit)="onFetch(interviewform.value)" appearance="fill"> 
+
+    <mat-form-field>
+        <mat-label>Interview</mat-label>
+        <mat-select formControlName="interview">
+            <mat-option *ngFor="let interview of questionsets" [value]="interview.name">
+              {{interview.name | titlecase}}
+            </mat-option>
+          </mat-select>
+        </mat-form-field> <button mat-raised-button color="primary" type="submit">Search</button>
+    </form>
+    <div *ngIf='loaded' fxLayout="row wrap" fxFlex.md="70" fxLayoutWrap class="card-deck-container">
+        <div fxFlex="20%" *ngFor="let result of results" class="card-item" (click)="showDetails(result)">
+          <app-interviewcard [result]=result ></app-interviewcard>
+        </div>
+    </div> 
+    
+    </mat-card>

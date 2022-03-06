@@ -1,0 +1,32 @@
+<mat-card class="card" >
+    <mat-card-header>
+      <mat-card-title>{{result.interviewee.candidateId |titlecase}}</mat-card-title>
+      <mat-card-subtitle>{{result.questionset.name |titlecase}}</mat-card-subtitle>
+    </mat-card-header>
+    <mat-card-content>
+      <!-- <h3>Progress {{value.toFixed(1)}} %</h3>
+      <mat-progress-bar
+      class="example-margin"
+      color='primary'
+      mode='determinate'
+      [value]="value">
+  </mat-progress-bar> -->
+  <br>
+  <h3>Average Score {{avgScore}}/10</h3>
+      <mat-progress-bar
+      class="example-margin"
+      mode='determinate'
+      [value]="avgScore*10">
+  </mat-progress-bar>
+  <br>
+  <h3>Average Difficulty {{avgDifficulty}}/10</h3>
+  <h3>Total score {{result.netScore.toFixed(1)}}/{{result.netWeight*10}}</h3>
+  <h3>Interview Status : {{status}}</h3>
+
+
+    </mat-card-content>
+    <mat-card-actions>
+      <!-- <button mat-button>LIKE</button>
+      <button mat-button>SHARE</button> -->
+    </mat-card-actions>
+  </mat-card>

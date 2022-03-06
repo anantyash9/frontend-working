@@ -1,0 +1,32 @@
+<mat-grid-list cols="4" rowHeight="92vh">
+    <mat-grid-tile
+        [colspan]=3
+        [rowspan]=1>
+      <!-- add a mat card with mat table inside -->
+        <mat-card class="big-box">
+            <mat-card-header>
+            <mat-card-title>Registered Devices</mat-card-title>
+            </mat-card-header>
+            <mat-card-content>
+            <!-- add a sample mat table -->
+            <app-devices-view></app-devices-view>
+            </mat-card-content>
+        </mat-card>
+
+    </mat-grid-tile>
+    <mat-grid-tile
+    [colspan]=1
+    [rowspan]=1>
+  <!-- add a mat card with mat table inside -->
+    <mat-card class="big-box">
+        <mat-card-header>
+        <mat-card-title>Summary</mat-card-title>
+        <mat-card-subtitle>Summary of Auth Devices</mat-card-subtitle>
+        </mat-card-header>
+        <mat-card-content>
+        <app-summary-pannel></app-summary-pannel>
+        </mat-card-content>
+    </mat-card>
+
+</mat-grid-tile>
+  </mat-grid-list>

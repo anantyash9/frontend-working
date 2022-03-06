@@ -1,0 +1,32 @@
+.background-wave {
+    opacity: 0.3;
+    z-index: -100;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 95%;
+    width: 100%;
+  }
+
+  .solution{
+    height: 80%;
+    width: 100%;
+    color: #494949;
+    font-size: large;
+  }
+  .large-text{
+    font-size: xx-large;
+  }
+  .even-large-text{
+    padding-top: 1em;
+  }
+  .icons{
+  max-width: 60%;
+  height: auto;
+  }
+  .typearea{
+    color:#5c5c5c;
+    padding: 1em;
+    padding-top: 2em;
+    
+    }
