@@ -3,6 +3,9 @@
       <span>Contactless Auth</span>
     </a>
     <span class="fill-remaining-space"></span>
+    <a mat-button class="role">
+      <span>{{role}}</span>
+    </a>
     <app-menu 
       [options]="options$ | async"
       (themeChange)="themeChangeHandler($event)">
@@ -11,17 +14,21 @@
 <mat-icon>menu</mat-icon>
 </button>
 <mat-menu #menu="matMenu" [overlapTrigger]="false">
-<button mat-menu-item [routerLink]="['']">
+<button mat-menu-item [routerLink]="linksys">
 <mat-icon>home</mat-icon>
 <span>Home</span>
 </button>
-<button mat-menu-item [routerLink]="['attendence']">
+<button mat-menu-item [routerLink]="['auth-records']">
     <mat-icon>videocam</mat-icon>
-    <span>Attandance</span>
+    <span>Auth Records</span>
 </button>
-<button mat-menu-item [routerLink]="['interviewresults']" *ngIf="Admin">
-  <mat-icon>fact_check</mat-icon>
-  <span>Review Interviews</span>
+<button mat-menu-item [routerLink]="['hr-admin']" *ngIf="admin">
+  <mat-icon>people</mat-icon>
+  <span>Employees</span>
+</button>
+<button mat-menu-item [routerLink]="['admin']" *ngIf="deviceAdmin">
+  <mat-icon>important_devices</mat-icon>
+  <span>Devices</span>
 </button>
 <button mat-menu-item (click)="logout();">
 <mat-icon>people_outline</mat-icon>

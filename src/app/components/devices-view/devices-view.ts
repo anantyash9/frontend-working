@@ -20,25 +20,14 @@ export class DevicesViewComponent implements AfterViewInit{
   deviceData: DeviceData[] = [];
   @ViewChild(MatPaginator) paginator: MatPaginator;
   @ViewChild(MatSort) sort: MatSort;
-  device= {
-    "createdAt": "2022-03-06T16:17:00.436839Z",
-    "deviceIdentifier": "7b:ed:b4:d3:4d:34",
-    "deviceName": "Jetson IOT Edge",
-    "deviceType": "Nvidia Jetson",
-    "enabled": true,
-    "id": 203,
-    "location": "Bangalore Gate 6 Section 2",
-    "status": false,
-    "updatedAt": "2022-03-06T16:20:07.456194Z"
-}
 
 
   constructor(private quarkusService:QuarkusService,private changeDetectorRefs:ChangeDetectorRef, public dialogue: MatDialog) {
     // Create 100 users
-    for (let i = 1; i <= 100; i++) {
-      
-      this.deviceData.push(this.device);
-    }
+    this.quarkusService.getDevices().subscribe(data => {
+    console.log(data);
+    this.deviceData = data;
+    });
   }
   ngAfterViewInit() {
     
@@ -60,7 +49,11 @@ export class DevicesViewComponent implements AfterViewInit{
 addDevice(){
   this.dialogue.open(AddDeviceComponent,{data:new Device()}).afterClosed().subscribe(result=>{
     if (result) {
-      console.log("added");
+      console.log("result");
+      this.deviceData.push(result);
+      this.dataSource = new MatTableDataSource(this.deviceData);
+      this.dataSource.paginator = this.paginator;
+      this.dataSource.sort = this.sort;
     }
   });
 }
@@ -76,7 +69,13 @@ deleteDevice(device:Device){
   dialogRef.afterClosed().subscribe(result => {
     if(result) {
       // do confirmation actions
-      console.log("deleted");
+      console.log(result);
+      this.quarkusService.deleteDevice(device.id).subscribe(data=>{
+        this.deviceData = this.deviceData.filter(item => item.id !== device.id);
+        this.dataSource = new MatTableDataSource(this.deviceData);
+        this.dataSource.paginator = this.paginator;
+        this.dataSource.sort = this.sort;
+      });
     }
     dialogRef = null;
   });

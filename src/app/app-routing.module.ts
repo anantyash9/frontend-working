@@ -23,7 +23,7 @@ const routes: Routes = [{ path: '', component: LandingComponent },
 { path: 'admin', component: AdminViewComponent },
 { path: 'register', component: RegisterComponent },
 { path: 'capture', component: CaptureComponent },
-{ path: 'attendence', component: AttendenceViewComponent },
+{ path: 'auth-records', component: AttendenceViewComponent },
 { path: 'user-attendence', component: UserAttendenceViewComponent },
 { path: 'summary-pannel', component: SummaryPannelComponent }
 ];

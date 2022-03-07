@@ -29,10 +29,7 @@
         <mat-cell *matCellDef="let row" (click)="userDetails(row,2)"> {{row.id}} </mat-cell>
       </ng-container>
 
-      <ng-container matColumnDef="Temperature">
-        <mat-header-cell *matHeaderCellDef mat-sort-header> Temperature </mat-header-cell>
-        <mat-cell *matCellDef="let row" (click)="userDetails(row,2)"> {{row.temperature}} </mat-cell>
-      </ng-container> 
+
       <!-- Color Column -->
       <ng-container matColumnDef="Active">
         <mat-header-cell *matHeaderCellDef mat-sort-header> Active </mat-header-cell>

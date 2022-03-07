@@ -1,16 +1,16 @@
 export const environment = {
-  production: true,
+  production: false,
   envName: "local",
   keycloak: {
     // Url of the Identity Provider
     issuer:
-      "https://intervu.tech/auth/",
+      "https://keycloak.developers.surveymaster.in/auth",
 
     // Realm
-    realm: "intervu",
+    realm: "openhack",
 
     // The SPA's id.
     // The SPA is registerd with this id at the auth-serverß
-    clientId: "test",
+    clientId: "public",
   },
 };

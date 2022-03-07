@@ -23,9 +23,10 @@ export class AddDeviceComponent implements OnInit {
   ngOnInit(): void {
   }
   registerDevice() {
-    console.log(this.data);
+    console.log("sending",this.data);
     this.quarkusService.registerDevice(this.data).subscribe(data => {
       console.log(data);
+    this.dialogRef.close(data);
     })
   }
 }

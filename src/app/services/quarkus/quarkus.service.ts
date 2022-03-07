@@ -10,13 +10,22 @@ import { Device } from 'src/app/models/device.model';
 export class QuarkusService {
 
 
+
   isRegistered:boolean=false;
   baseurl="";
   getEmployeesUrl="api/employee"
   getAnalyticsUrl="api/configuration/analytics"
   registerDeviceUrl="/api/configuration"
+  deleteDevice(id: number) {
+    return this.httpClient.delete(this.baseurl+this.registerDeviceUrl+"/"+id,{responseType:'json'});
+  }
 
-  
+  editDevice(data: Device) {
+    return this.httpClient.put(this.baseurl+this.registerDeviceUrl,data,{responseType:'json'});
+  }
+  getDevices():Observable<any>{
+    return this.httpClient.get(this.baseurl+this.registerDeviceUrl,{responseType:'json'});
+  }
   registerDevice(data: Device) {
     return this.httpClient.post(this.baseurl+this.registerDeviceUrl,data,{responseType:'json'});
   }
